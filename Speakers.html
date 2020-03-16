@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Speakers</title>
+	<link rel="stylesheet" href="Speakers.css">
+	<style>
+		body
+		{
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			background: black;
+			font-family: sans-serif;
+		}
+		.header
+		{
+		  	color: black;
+		  	text-align: center;
+		  	font-weight: 900;
+		  	font-size: 4em;
+		}
+		.header .letter 
+		{
+			margin-top: 30px;
+		  	font-family: sans-serif;
+		  	color: red;
+		  	display: inline-block;
+		  	line-height: 1em;
+		}
+		.container
+		{
+		  	justify-content: center;
+		  	margin: 20px auto 0;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		.container .box
+		{
+			position: relative;
+			width: 300px;
+			height: 300px;
+			background: white;
+			margin: 50px;
+			box-sizing: border-box;
+			display: inline-block;
+			box-shadow:  0 0 20px red;
+		}
+		.container .box .imgbox
+		{
+			position: relative;
+			overflow: hidden;
+		}
+		.container .box .imgbox img
+		{
+			min-width: 100%;
+			transition : transform 1s;
+		}
+		.container .box:hover .imgbox img
+		{
+			transform: scale(1.2);
+		}
+		.container .box .details
+		{
+			position: absolute;
+			top: 10px;
+			bottom: 10px;
+			left: 10px;
+			right: 10px;
+			background :rgba(0,0,0,0.5);
+			transform: scaleY(0);
+			transition: transform .5s;
+		}
+		.container .box:hover .details
+		{
+			transform: scaleY(1);
+		}
+		.container .box .details .content
+		{
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			text-align: center;
+			padding: 15px;
+			color: white;
+		}
+		.container .box .details .content h2
+		{
+			margin: 0;
+			padding: 0;
+			font-size: 20px;
+			color: white;
+		}
+		.container .box .details .content p
+		{
+			margin: 10px 0 0;
+			padding: 0;
+		}
+	</style>
+	<script>
+		function fun()
+		{
+			var textWrapper = document.querySelector('.header');
+			textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+			anime.timeline({loop: true})
+	  		.add({
+	    		targets: '.header .letter',
+	    		scale: [4,1],
+	    		opacity: [0,1],
+	    		translateZ: 0,
+	    		easing: "easeOutExpo",
+	    		duration: 950,
+	    		delay: (el, i) => 70*i
+	  		}).add({
+	    		targets: '.header',
+	    		opacity: 0,
+	    		duration: 10000000000000000000000000000000000000,
+	    		easing: "easeOutExpo",
+	    		delay: 1000
+	  		});
+	  	}
+	</script>
+</head>
+<body onload="fun()">
+	<div class="header">
+		<p>Our Speakers</p>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+	<div class="container">
+		<div class="box">
+			<div class="imgbox">
+				<img src="Image.jpg">
+			</div>
+			<div class="details">
+				<div class="content">
+					<h2>Name1</h2>
+					<p>Profession</p>
+				</div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="imgbox">
+				<img src="Image.jpg">
+			</div>
+			<div class="details">
+				<div class="content">
+					<h2>Name2</h2>
+					<p>Profession</p>
+				</div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="imgbox">
+				<img src="Image.jpg">
+			</div>
+			<div class="details">
+				<div class="content">
+					<h2>Name3</h2>
+					<p>Profession</p>
+				</div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="imgbox">
+				<img src="Image.jpg">
+			</div>
+			<div class="details">
+				<div class="content">
+					<h2>Name4</h2>
+					<p>Profession</p>
+				</div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="imgbox">
+				<img src="Image.jpg">
+			</div>
+			<div class="details">
+				<div class="content">
+					<h2>Name5</h2>
+					<p>Profession</p>
+				</div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="imgbox">
+				<img src="Image.jpg">
+			</div>
+			<div class="details">
+				<div class="content">
+					<h2>Name6</h2>
+					<p>Profession</p>
+				</div>
+			</div>
+		</div>
+			<div class="box">
+				<div class="imgbox">
+					<img src="Image.jpg">
+				</div>
+				<div class="details">
+					<div class="content">
+						<h2>Name7</h2>
+						<p>Profession</p>
+					</div>
+				</div>
+			</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website Development</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <style>
+    body
+    {
+      background-color: white;
+    }
+    .column 
+    {
+      float: left;
+      width: 20%;
+      margin-bottom: 25px;
+      margin-left: 5%;
+    }
+    @media screen and (max-width: 650px) 
+    {
+      .column 
+      {
+        width: 100%;
+        display: block;
+      }
+    }
+    .column1 
+    {
+      float: left;
+      width: 20%;
+      margin-bottom: 25px;
+      padding-left: 30%;
+      margin-right: -5%; 
+    }
+    @media screen and (max-width: 650px) 
+    {
+      .column1 
+      {
+        width: 100%;
+        display: block;
+      }
+    }
+    .column2
+    {
+      float: left;
+      width: 20%;
+      margin-bottom: 25px;
+      padding-left: 37%;
+      margin-left: -27%; 
+    }
+    @media screen and (max-width: 650px) 
+    {
+      .column2 
+      {
+        width: 100%;
+        display: block;
+      }
+    }
+    .heading
+    {
+      font-size: 30px;
+    }
+    .card 
+    {  
+      width:180px;
+      height:230px;
+      background: white;
+      box-shadow: 0 0px 20px black;
+    }
+    .container 
+    {
+      color: red;
+      text-align: center;
+      font-size: 15px;
+      margin-top: -15px;
+    }
+    .container::after, .row::after 
+    {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    .title 
+    {
+      margin-top: -15px;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+<div>
+<center>
+  <p style="font-size: 30px"><b>WEBSITE TEAM</b></p>
+  <div class="row">
+    <div class="column1">
+      <div class="card">
+        <img src="Image.jpg" alt="Jane" style="width:100%">
+        <div class="container">
+          <h3>Name1</h3>
+          <p class="title">Head</p>  
+        </div>
+      </div>
+    </div>
+      <div class="column2">
+      <div class="card">
+        <img src="Image.jpg" alt="Mike" style="width:100%">
+        <div class="container">
+          <h3>Name2</h3>
+          <p class="title">Assistant head</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="Image.jpg" alt="Jane" style="width:100%">
+        <div class="container">
+          <h3>Manisha</h3>
+          <p class="title">Organiser</p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <img src="Image.jpg" alt="Mike" style="width:100%">
+        <div class="container">
+          <h3>Akanksha</h3>
+          <p class="title">Organiser</p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <img src="Image.jpg" alt="John" style="width:100%">
+        <div class="container">
+          <h3>Dharani</h3>
+          <p class="title">Organiser</p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <img src="Image.jpg" alt="Mike" style="width:100%">
+        <div class="container">
+          <h3>Vishwatej</h3>
+          <p class="title">Organiser</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</center>
+</body>
+</html>
