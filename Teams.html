@@ -2,23 +2,27 @@
 <html>
 <head>
     <meta charset = "utf-8">
+
     <title>Team</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.boomcdn.com/libs/animate-css/3.7.0/animate.css">
+
     <style>
         body
         {
             background: black;
             color: white;
         }
-        .header
+        .h1
         {
             color: black;
             text-align: center;
             font-weight: 900;
             font-size: 3.9em;
         }
-        .header .letter 
+        .h1 .letter 
         {
             font-family: sans-serif;
             color: red;
@@ -49,167 +53,326 @@
         {
             background-color: red;   
         }
+ header {
+  min-height: 50px;
+  padding: 0;
+  margin: 0;
+  background-color: #545147;
+  -webkit-transition: all ease-in-out 0.4s;
+  transition: all ease-in-out 0.4s;
+}
+header .menu {
+  position: relative;
+}
+header .logo {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+header .logo img {
+  float: left;
+  max-width: 160px;
+  margin-right: 3px;
+}
+header ul.menu li a.nav-link {
+  padding: 20px 12px !important;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  display: block;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+header ul.menu li a.nav-link:hover {
+  color: #f50136;
+}
+
+header li ul {
+  display: none;
+  visibility: hidden;
+}
+header li ul.sub_menu {
+  position: absolute;
+  background: #333333;
+  min-width: 250px;
+  padding: 10px;
+  border-radius: 3px;
+  -webkit-box-shadow: 1px 1px 42px rgba(0, 0, 0, 0.08);
+          box-shadow: 1px 1px 42px rgba(0, 0, 0, 0.08);
+}
+header li ul.sub_menu li {
+  display: block;
+}
+header li ul.sub_menu li a {
+  color: #999999 !important;
+  padding: 7px 10px;
+  display: block;
+  margin-left: 0;
+  line-height: 22px;
+  word-break: break-word;
+}
+header li ul.sub_menu li a:hover {
+  color: #ffffff !important;
+  transform: translate3d(2px, 0, 0);
+  -webkit-transform: translate3d(2px, 0, 0);
+}
+
+.navbar {
+  padding: 0;
+}
+
+header.sticky_header {
+  background-color: #18181c;
+  margin: 0;
+  padding: 5px;
+  -webkit-box-shadow: 0 0 42px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 42px rgba(0, 0, 0, 0.08);
+  -webkit-transition: all ease-in-out 0.4s;
+  transition: all ease-in-out 0.4s;
+}
+
+.navbar-toggler {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 5px 10px;
+  font-size: 30px;
+  outline: 0 !important;
+  -webkit-box-shadow: 0 0 0 !important;
+          box-shadow: 0 0 0 !important;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+@media (min-width: 767px) {
+  header li:hover > ul {
+    display: block;
+    visibility: visible;
+  }
+}
+@media (max-width: 767px) {
+  header {
+    background-color: #18181c;
+    margin: 0;
+    -webkit-box-shadow: 0 0 42px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 42px rgba(0, 0, 0, 0.08);
+    -webkit-transition: all ease-in-out 0.4s;
+    transition: all ease-in-out 0.4s;
+  }
+  header .container {
+    padding: 15px !important;
+  }
+
+  header li > ul {
+    position: static;
+    visibility: visible;
+    width: 100%;
+  }
+
     </style>
-    <script>
-        function fun()
-        {
-            var textWrapper = document.querySelector('.header');
-            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-            anime.timeline({loop: true})
-            .add({
-                targets: '.header .letter',
-                scale: [4,1],
-                opacity: [0,1],
-                translateZ: 0,
-                easing: "easeOutExpo",
-                duration: 950,
-                delay: (el, i) => 70*i
-            }).add({
-                targets: '.header',
-                opacity: 0,
-                duration: 10000000000000000000000000000000000000,
-                easing: "easeOutExpo",
-                delay: 100
-            });
-        }
-        function fun1()
-        { 
-            $('#iframeHolder1').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
-        }
-        function fun2()
-        {
-            $('#iframeHolder1').html(' ');
-        }
-        function fun3()
-        { 
-            $('#iframeHolder2').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
-        }
-        function fun4()
-        {
-            $('#iframeHolder2').html(' ');
-        }
-        function fun5()
-        { 
-            $('#iframeHolder3').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
-        }
-        function fun6()
-        {
-            $('#iframeHolder3').html(' ');
-        }
-        function fun7()
-        { 
-            $('#iframeHolder4').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
-        }
-        function fun8()
-        {
-            $('#iframeHolder4').html(' ');
-        }
-        function fun9()
-        { 
-            $('#iframeHolder5').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
-        }
-        function fun10()
-        {
-            $('#iframeHolder5').html(' ');
-        }
-        function fun11()
-        { 
-            $('#iframeHolder6').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
-        }
-        function fun12()
-        {
-            $('#iframeHolder6').html(' ');
-        }
-        function fun13()
-        { 
-            $('#iframeHolder7').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
-        }
-        function fun14()
-        {
-            $('#iframeHolder7').html(' ');
-        }
-        function fun15()
-        { 
-            $('#iframeHolder8').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
-        }
-        function fun16()
-        {
-            $('#iframeHolder8').html(' ');
-        }
-        function fun17()
-        { 
-            $('#iframeHolder9').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
-        }
-        function fun18()
-        {
-            $('#iframeHolder9').html(' ');
-        }
-        function fun19()
-        { 
-            $('#iframeHolder10').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="100"></iframe>');
-        }
-        function fun20()
-        {
-            $('#iframeHolder10').html(' ');
-        }
-    </script>
 </head>
 <body onload="fun()">
-    <center>
-        <div class="header"><h1>TEDx Team</h1><br></div>
+    <header class="header navbar fixed-top navbar-expand-md">
+    <div class="container">
+        <a class="navbar-brand logo" href="#">
+         
+            <span class="text-danger">TEDx</span> <span class="text-white">OsmaniaU</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headernav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="lnr lnr-text-align-right"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
+                <ul class="nav navbar-nav menu">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html" >Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="About.html" >About Us</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Speakers.html" >Speakers</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html" > Our Sponsors</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html" >BUY NOW</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Teams.html" >TEAM</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#contact" >Contact</a>
+                    </li>         
+                </ul>
+            </div>
+    </div>
+
+   
+</header>
+<br><br><br><br><br>
+
+    <center >
+        <div class="header h1"><h1>TEDx Team</h1><br></div>
         <p>Note: Click to view the details & double click to close</p>
         <div class="team">
-        	<p><button class="btn" onclick="fun1()" ondblclick="fun2()">
+            <p><button class="btn" onclick="fun1()" ondblclick="fun2()">
                 Speaker Management
                 <i style="font-size:17px" class="fa">&#43;</i>
             </button></p>
             <div id="iframeHolder1" class="team"></div>
-        	<p><button class="btn" onclick="fun3()" ondblclick="fun4()">
+            <p><button class="btn" onclick="fun3()" ondblclick="fun4()">
                 Promotions
                 <i style="font-size:17px" class="fa">&#43;</i>
             </button></p>
             <div id="iframeHolder2" class="team"></div>
-        	<p><button class="btn" onclick="fun5()" ondblclick="fun6()">
+            <p><button class="btn" onclick="fun5()" ondblclick="fun6()">
                 Sponsorship
                 <i style="font-size:17px" class="fa">&#43;</i>
             </button></p>
             <div id="iframeHolder3" class="team"></div>
-        	<p><button class="btn" onclick="fun7()" ondblclick="fun8()">
+            <p><button class="btn" onclick="fun7()" ondblclick="fun8()">
                 Technical
                 <i style="font-size:17px" class="fa">&#43;</i>
             </button></p>
             <div id="iframeHolder4" class="team"></div>
-        	<p><button class="btn" onclick="fun9()" ondblclick="fun10()">
+            <p><button class="btn" onclick="fun9()" ondblclick="fun10()">
                 Logistics
                 <i style="font-size:17px" class="fa">&#43;</i>
             </button></p>
             <div id="iframeHolder5" class="team"></div>
-        	<p><button class="btn" onclick="fun11()" ondblclick="fun12()">
+            <p><button class="btn" onclick="fun11()" ondblclick="fun12()">
                 Productions
                 <i style="font-size:17px" class="fa">&#43;</i>
             </button></p>
             <div id="iframeHolder6" class="team"></div>
-        	<p><button class="btn" onclick="fun13()" ondblclick="fun14()">
+            <p><button class="btn" onclick="fun13()" ondblclick="fun14()">
                 Arts and Craft
                 <i style="font-size:17px" class="fa">&#43;</i>
             </button></p>
-            <div id="iframeHolder7" class="team"></div>	
-        	<p><button class="btn" onclick="fun15()" ondblclick="fun16()">
+            <div id="iframeHolder7" class="team"></div> 
+            <p><button class="btn" onclick="fun15()" ondblclick="fun16()">
                 Editorial
                 <i style="font-size:17px" class="fa">&#43;</i>
             </button></p>
             <div id="iframeHolder8" class="team"></div>
-        	<p><button class="btn" onclick="fun17()" ondblclick="fun18()">
+            <p><button class="btn" onclick="fun17()" ondblclick="fun18()">
                 Website Development
                 <i style="font-size:17px" class="fa">&#43;</i>
             </button></p>
             <div id="iframeHolder9" class="team"></div>
-        	<p><button class="btn" onclick="fun19()" ondblclick="fun20()">
+            <p><button class="btn" onclick="fun19()" ondblclick="fun20()">
                 Operations
                 <i style="font-size:17px" class="fa">&#43;</i>
             </button></p>
             <div id="iframeHolder10" class="team"></div>
         </div>
+        <script>
+            function fun()
+            {
+                var textWrapper = document.querySelector('.header.h1');
+                textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                anime.timeline({loop: true})
+                .add({
+                    targets: '.header .letter',
+                    scale: [4,1],
+                    opacity: [0,1],
+                    translateZ: 0,
+                    easing: "easeOutExpo",
+                    duration: 950,
+                    delay: (el, i) => 70*i
+                }).add({
+                    targets: '.header',
+                    opacity: 0,
+                    duration: 10000000000000000000000000000000000000,
+                    easing: "easeOutExpo",
+                    delay: 100
+                });
+            }
+            function fun1()
+            { 
+                $('#iframeHolder1').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
+            }
+            function fun2()
+            {
+                $('#iframeHolder1').html(' ');
+            }
+            function fun3()
+            { 
+                $('#iframeHolder2').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
+            }
+            function fun4()
+            {
+                $('#iframeHolder2').html(' ');
+            }
+            function fun5()
+            { 
+                $('#iframeHolder3').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
+            }
+            function fun6()
+            {
+                $('#iframeHolder3').html(' ');
+            }
+            function fun7()
+            { 
+                $('#iframeHolder4').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
+            }
+            function fun8()
+            {
+                $('#iframeHolder4').html(' ');
+            }
+            function fun9()
+            { 
+                $('#iframeHolder5').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
+            }
+            function fun10()
+            {
+                $('#iframeHolder5').html(' ');
+            }
+            function fun11()
+            { 
+                $('#iframeHolder6').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
+            }
+            function fun12()
+            {
+                $('#iframeHolder6').html(' ');
+            }
+            function fun13()
+            { 
+                $('#iframeHolder7').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
+            }
+            function fun14()
+            {
+                $('#iframeHolder7').html(' ');
+            }
+            function fun15()
+            { 
+                $('#iframeHolder8').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
+            }
+            function fun16()
+            {
+                $('#iframeHolder8').html(' ');
+            }
+            function fun17()
+            { 
+                $('#iframeHolder9').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="700"></iframe>');
+            }
+            function fun18()
+            {
+                $('#iframeHolder9').html(' ');
+            }
+            function fun19()
+            { 
+                $('#iframeHolder10').html('<iframe id="iframe" src="WebsiteTeam.html" width="1000" height="100"></iframe>');
+            }
+            function fun20()
+            {
+                $('#iframeHolder10').html(' ');
+            }
+        </script>
     </center>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>
